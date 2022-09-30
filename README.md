@@ -18,5 +18,5 @@ generator.MakeWindow(Name="Test GUI", HidePremium=False, SaveConfig=True, Config
 ```
 4. make a tab
 ```py
-generator.MakeTab(Name="Tab 1", Icon="rbxassetid://4483345998", PremiumOnly=False)
+generator.MakeTab(WindowName="Test GUI", Name="Tab 1", Icon="rbxassetid://4483345998", PremiumOnly=False)
 ```
