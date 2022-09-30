@@ -14,9 +14,9 @@ generator.Create("./", "script_test")
 ```
 3. make a window
 ```py
-generator.MakeWindow(name="Test GUI", HidePremium=False, SaveConfig=True, ConfigFolder="OrionTest")
+generator.MakeWindow(Name="Test GUI", HidePremium=False, SaveConfig=True, ConfigFolder="OrionTest")
 ```
 4. make a tab
 ```py
-generator.MakeTab(name="Tab 1", Icon="rbxassetid://4483345998", PremiumOnly=False)
+generator.MakeTab(Name="Tab 1", Icon="rbxassetid://4483345998", PremiumOnly=False)
 ```
