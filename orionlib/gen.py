@@ -56,11 +56,11 @@ class Generator:
             args[CloseCallback] = CloseCallback
 
         luaArgs = str(args).replace(":", "=")
-        finalPayload = f'local Window = OrionLib:MakeWindow({luaArgs})'
+        finalPayload = f'local {Name.strip()} = OrionLib:MakeWindow({luaArgs})'
 
         self.file.write(finalPayload)+"\n"
 
-    def MakeTab(self, Name, Icon=None, PremiumOnly=None):
+    def MakeTab(self, WindowName, Name, Icon=None, PremiumOnly=None):
         """
         Name = <string> - The name of the tab.\n
         Icon = <string> - The icon of the tab.\n
@@ -78,6 +78,6 @@ class Generator:
             args[PremiumOnly] = str(PremiumOnly).lower()
 
         luaArgs = str(args).replace(":", "=")
-        finalPayload = f'local Window = OrionLib:MakeWindow({luaArgs})'
+        finalPayload = f'local {Name.strip()} = {WindowName.strip()}:MakeTab({luaArgs})'
 
         self.file.write(finalPayload)+"\n"
