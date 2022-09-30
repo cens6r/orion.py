@@ -59,3 +59,25 @@ class Generator:
         finalPayload = f'local Window = OrionLib:MakeWindow({luaArgs})'
 
         self.file.write(finalPayload)+"\n"
+
+    def MakeTab(self, Name, Icon=None, PremiumOnly=None):
+        """
+        Name = <string> - The name of the tab.\n
+        Icon = <string> - The icon of the tab.\n
+        PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.\n
+        """
+
+        if not self.file:
+            print("You forgot to create the script!")
+            return
+
+        args = {Name: Name}
+        if Icon:
+            args[Icon] = Icon
+        if PremiumOnly:
+            args[PremiumOnly] = str(PremiumOnly).lower()
+
+        luaArgs = str(args).replace(":", "=")
+        finalPayload = f'local Window = OrionLib:MakeWindow({luaArgs})'
+
+        self.file.write(finalPayload)+"\n"
